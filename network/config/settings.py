@@ -37,10 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'debug_toolbar',
     'posts',
 ]
 
 MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -127,3 +129,10 @@ STATIC_ROOT = BASE_DIR / 'static_cdn'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media_root'
+
+# Django Debug Toolbar
+
+INTERNAL_IPS = [
+    '127.0.0.1',
+
+]
