@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'users',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -65,6 +66,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                'posts.context_processors.date.year',
             ],
         },
     },
@@ -134,5 +137,4 @@ MEDIA_ROOT = BASE_DIR / 'media_root'
 
 INTERNAL_IPS = [
     '127.0.0.1',
-
 ]

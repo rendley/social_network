@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Форма
+{% endblock %}
+
+{% block header %}
+    Форма запроса
+{% endblock %}
+
+{% block content %}
+
+    <form class="form" method="POST" action="{% url 'users:contact' %}">
+        <div class="form-control-lg">
+            <div class="card" >
+                <div class="card-body">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" value="Отправить">
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+{% endblock %}
